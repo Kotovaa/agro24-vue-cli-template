@@ -5,7 +5,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 // Import main module
-import { state, mutations, actions, getters } from './modules/main';
+import main from './modules/main';
 
 // Import other modules
 import modules from './modules';
@@ -13,10 +13,10 @@ import modules from './modules';
 // Create store instance
 const store = new Vuex.Store({
     modules,
-    state,
-    mutations,
-    actions,
-    getters
+    state: main.state,
+    mutations: main.mutations,
+    actions: main.actions,
+    getters: main.getters
 });
 
 export default store;

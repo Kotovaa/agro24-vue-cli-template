@@ -15,7 +15,7 @@ routes.forEach(route => {
 
 // Create router instance
 const router = new VueRouter({
-    mode: 'histroy',
+    mode: 'history',
     root: config.root,
     routes
 });

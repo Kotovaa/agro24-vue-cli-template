@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/main.js', './src/sass/main.scss'],
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -28,14 +28,8 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-            loader: 'css-loader?importLoaders=1'
-        })
-      },
-      {
         test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -47,10 +41,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({
-      filename: '/dist/app.css',
-      allChunks: true,
-    })
+    new ExtractTextPlugin('app.css')
   ],
   resolve: {
     alias: {
@@ -68,8 +59,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.devtool = '#source-map';
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {

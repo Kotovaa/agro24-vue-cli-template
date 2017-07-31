@@ -9,4 +9,4 @@ const mutations = {
     }
 };
 
-export const mutations;
+export default mutations;
