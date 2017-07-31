@@ -1,18 +1,13 @@
-# {{ name }}
+# agro24-vue-cli-template
 
-> {{ description }}
+Template project for Vue CLI
 
-## Build Setup
+### Usage
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+$ npm install -g vue-cli
+$ vue init russianpro/agro24-vue-cli-template vue-app
+$ cd vue-app
+$ npm install
+$ npm run dev
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
