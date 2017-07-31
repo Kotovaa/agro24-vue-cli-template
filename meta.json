@@ -3,22 +3,17 @@
     "name": {
       "type": "string",
       "required": true,
-      "label": "Project name"
+      "label": "AGRO24"
     },
     "description": {
       "type": "string",
       "required": true,
       "label": "Project description",
-      "default": "A Vue.js project"
+      "default": "AGRO24 Vue.js Project"
     },
     "author": {
       "type": "string",
       "label": "Author"
-    },
-    "sass": {
-       "type": "confirm",
-       "message": "Use sass?",
-       "default": false
     }
   },
   "completeMessage": "{{#inPlace}}To get started:\n\n  npm install\n  npm run dev.{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev.{{/inPlace}}"
